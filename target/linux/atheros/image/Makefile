@@ -55,7 +55,12 @@ define Image/Build
 	-sh $(TOPDIR)/scripts/combined-image.sh \
 		"$(BIN_DIR)/$(IMG_PREFIX)-vmlinux.lzma" \
 		"$(BIN_DIR)/$(IMG_PREFIX)-root.$(1)" \
-		"$(BIN_DIR)/$(IMG_PREFIX)-combined.$(1).img"
+		"$(BIN_DIR)/$(IMG_PREFIX)-combined.lzma.$(1).img"
+	-sh $(TOPDIR)/scripts/combined-image.sh \
+		"$(BIN_DIR)/$(IMG_PREFIX)-vmlinux.gz" \
+		"$(BIN_DIR)/$(IMG_PREFIX)-root.$(1)" \
+		"$(BIN_DIR)/$(IMG_PREFIX)-combined.gzip.$(1).img"
+
   endif
 endef
 
